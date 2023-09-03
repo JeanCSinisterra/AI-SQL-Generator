@@ -22,9 +22,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:frontend": "PORT=3000 react-scripts start",
-    "start:backend": "ts-node-esm index.ts",
+    "client": "PORT=3000 react-scripts start",
+    "server": "ts-node-esm index.ts && npm run watch",
+    "watch": "npm run server && npm run client",
     "build": "react-scripts build",
+    "deploy": "npm run build && npm run client && npm run watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
